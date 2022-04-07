@@ -1,8 +1,7 @@
 import { Box } from '@mui/material'
 import Head from 'next/head'
 import { FC } from 'react'
-import { Navbar } from '../ui'
-import { Sidebar } from '../ui/Sidebar'
+import { Navbar, Sidebar } from '../ui'
 
 interface Props {
   title?: string
