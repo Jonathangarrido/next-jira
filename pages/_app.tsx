@@ -5,17 +5,20 @@ import '../styles/globals.css'
 import { darkTheme, lightTheme } from '../themes'
 import { UIProvider } from '../context/ui/UIProvider'
 import { EntriesProvider } from '../context/entries'
+import { SnackbarProvider } from 'notistack'
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <EntriesProvider>
-      <UIProvider>
-        <ThemeProvider theme={darkTheme}>
-          <CssBaseline />
-          <Component {...pageProps} />
-        </ThemeProvider>
-      </UIProvider>
-    </EntriesProvider>
+    <SnackbarProvider maxSnack={3}>
+      <EntriesProvider>
+        <UIProvider>
+          <ThemeProvider theme={darkTheme}>
+            <CssBaseline />
+            <Component {...pageProps} />
+          </ThemeProvider>
+        </UIProvider>
+      </EntriesProvider>
+    </SnackbarProvider>
   )
 }
 
